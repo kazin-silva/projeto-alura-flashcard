@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards de IA - Alura & Google</title>
+  <style>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards de IA - Alura & Google</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0b132b;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: #5bc0be;
+      text-align: center;
+    }
+
+    p.subtitulo {
+      margin-bottom: 40px;
+      color: #a8b2d1;
+      text-align: center;
+    }
+
+    /* Container dos cards */
+    .container-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    /* Estrutura base do Flashcard com perspectiva 3D */
+    .flashcard {
+      background-color: transparent;
+      height: 220px;
+      perspective: 1000px; /* Dá a profundidade 3D */
+      cursor: pointer;
+    }
+
+    /* Container interno que faz o giro */
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+
+    /* Animação ao passar o mouse (:hover) */
+    .flashcard:hover .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Estilo comum para Frente e Verso */
+    .flashcard-front, .flashcard-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Esconde o verso quando virado */
+      backface-visibility: hidden;
+      border-radius: 16px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Estilo da Frente */
+    .flashcard-front {
+      background: linear-gradient(145deg, #1c2541, #233056);
+      border: 1px solid #3a506b;
+    }
+
+    .categoria {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background-color: #3a506b;
+      color: #6fffe9;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .flashcard-front h2 {
+      font-size: 1.3rem;
+      color: #ffffff;
+    }
+
+    /* Estilo do Verso (já começa rotacionado em 180deg) */
+    .flashcard-back {
+      background: linear-gradient(145deg, #3a506b, #1c2541);
+      border: 2px solid #5bc0be;
+      color: #e0fbfc;
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-back p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Flashcards: Agentes e IA</h1>
+  <p class="subtitulo">Passe o mouse sobre um card para ver a resposta</p>
+
+  <!-- O JavaScript vai preencher os cards aqui dentro -->
+  <div class="container-cards" id="lista-cards"></div>
+
+ <script src="va.js"></script>
+
+</body>
+</html>
